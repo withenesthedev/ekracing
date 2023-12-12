@@ -1,0 +1,19 @@
+---
+import Logo from '../components/Logo.astro'
+---
+
+<header class="flex h-[80px] w-full items-center bg-[#010101]">
+	<section class="mx-auto flex w-full max-w-screen-2xl items-center justify-between px-12">
+		<div>
+			<a href="/" class="relative flex items-center">
+				<Logo width="150" height="39" />
+			</a>
+		</div>
+		<nav class="text-white">
+			<ul class="flex flex-row items-center gap-5 text-sm font-medium uppercase">
+				<li class="hover:text-red-500">Home</li>
+				<li class="hover:text-[#9AFEFB]">Services</li>
+			</ul>
+		</nav>
+	</section>
+</header>

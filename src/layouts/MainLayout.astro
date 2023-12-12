@@ -1,0 +1,39 @@
+---
+import MainLayoutHeader from './MainLayoutHeader.astro';
+
+import { SEO } from 'astro-seo';
+
+import '../assets/styles/tailwind.css';
+import '../assets/styles/theme.css';
+
+export interface Props {
+	title: string;
+	description: string;
+}
+
+const { title, description } = Astro.props;
+---
+
+<!doctype html>
+<html lang="en">
+	<head>
+		<meta charset="utf8" />
+		<meta http-equiv="x-ua-compatible" content="ie=edge" />
+		<meta name="viewport" content="width=device-width, initial-scale=1" />
+
+		<SEO
+			title={title}
+			description={description}
+			extend={{
+				link: [{ rel: 'icon', href: '/favicon.ico' }],
+			}}
+		/>
+
+		<slot name="after-meta" />
+	</head>
+	<body class="flex flex-col">
+		<MainLayoutHeader />
+		<slot />
+		<slot name="after-body" />
+	</body>
+</html>
