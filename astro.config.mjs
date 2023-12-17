@@ -1,9 +1,12 @@
-import tailwind from "@astrojs/tailwind";
-import compress from "astro-compress";
+import tailwind from '@astrojs/tailwind';
+import compress from 'astro-compress';
 
-import { defineConfig } from "astro/config";
+import { defineConfig } from 'astro/config';
 
 // https://astro.build/config
 export default defineConfig({
-  integrations: [compress({ Logger: false }), tailwind()],
+	build: {
+		assets: 'assets',
+	},
+	integrations: [compress({ Logger: false }), tailwind()],
 });
