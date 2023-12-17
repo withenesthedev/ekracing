@@ -1,0 +1,27 @@
+---
+import { Image } from 'astro:assets';
+import hero from '../assets/images/b5-overlay.jpg';
+---
+
+<section class="ek-container relative flex h-[280px] items-end justify-end lg:h-auto">
+	<div class="md:max-w-[600px] lg:max-w-screen-md">
+		<Image
+			src={hero}
+			widths={[240, 540, 720, 1200, 1600, hero.width]}
+			sizes={`(max-width: 360px) 240px, (max-width: 720px) 540px, (max-width: 1200px) 720px, (max-width: 1600px) 1200px, 1600px, ${hero.width}px`}
+			alt="A description of my image."
+			class="object-cover"
+		/>
+	</div>
+	<div
+		class="absolute left-0 top-0 flex h-full w-full flex-col justify-start gap-2 px-6 py-8 text-white xl:justify-center"
+	>
+		<h1 class="text-xl font-medium md:text-2xl lg:text-3xl">Quickest B5 Quattro in Turkey</h1>
+		<div class="flex flex-col">
+			<ul class="flex flex-col text-xs text-white text-opacity-80 lg:text-sm">
+				<li>3.2 sec. @ 0 to 100 km/h (60 mph)</li>
+				<li>5.1 sec. @ 100 to 200 km/h (120 mph)</li>
+			</ul>
+		</div>
+	</div>
+</section>
