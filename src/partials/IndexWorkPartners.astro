@@ -7,23 +7,20 @@ const workpartners = await Astro.glob('/src/assets/images/workpartners/*.{png,jp
 );
 ---
 
-<section class="flex w-full flex-col gap-3 bg-neutral-50 py-12">
-	<h2 class="ek-container text-base font-bold uppercase">Work Partners</h2>
-	<div class="w-full border-y bg-neutral-100">
-		<div class="ek-container flex items-center justify-start gap-12 overflow-x-auto">
-			{
-				workpartners.map((image) => (
-					<div class="max-w-[100px] flex-none">
-						<Image
-							alt=""
-							src={image}
-							width={image.width}
-							height={image.height}
-							class="object-cover grayscale invert"
-						/>
-					</div>
-				))
-			}
-		</div>
+<section class="w-full border-y bg-neutral-50">
+	<div class="ek-container flex items-center justify-start gap-12 overflow-x-auto">
+		{
+			workpartners.map((image) => (
+				<div class="max-w-[125px] flex-none">
+					<Image
+						alt=""
+						src={image}
+						width={image.width}
+						height={image.height}
+						class="object-cover grayscale invert"
+					/>
+				</div>
+			))
+		}
 	</div>
 </section>

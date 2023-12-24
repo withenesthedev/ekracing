@@ -1,11 +1,13 @@
 import { defineCollection, z } from "astro:content";
 
 export const ServiceCollection = defineCollection({
-    type: 'data',
+    type: 'content',
     schema: z.object({
       title: z.string(),
-      slug: z.string(),
-      description: z.string(),
       thumbnail: z.string(),
+      content: z.string(),
+      meta: z.object({
+        description: z.string(),
+      })
     })
 });

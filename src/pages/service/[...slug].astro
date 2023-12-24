@@ -1,0 +1,31 @@
+---
+import { getCollection } from 'astro:content';
+import MainLayout from '../../layouts/MainLayout.astro';
+
+export async function getStaticPaths() {
+	const serviceEntries = await getCollection('services');
+	return serviceEntries.map((service) => ({
+		params: { slug: service.id },
+		props: { service },
+	}));
+}
+
+const { service } = Astro.props;
+---
+
+<MainLayout title={service.data.title} description={service.data.meta.description}>
+	<section class="flex flex-col gap-5 border-t-[10px] border-t-red-600 bg-white py-6 pb-12">
+		<div class="ek-container flex flex-col gap-1 py-6 lg:gap-2">
+			<span class="font-medium text-neutral-500">Our services</span>
+			<h1 class="border-b pb-6 text-3xl font-semibold text-gray-800 xl:text-4xl">
+				{service.data.title}
+			</h1>
+		</div>
+		<div class="ek-container">
+			<div
+				class="flex flex-col gap-8 text-base tracking-wider text-gray-600"
+				set:html={service.data.content}
+			/>
+		</div>
+	</section>
+</MainLayout>

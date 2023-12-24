@@ -1,0 +1,49 @@
+---
+import { Image } from 'astro:assets';
+import { getCollection } from 'astro:content';
+
+const media = import.meta.glob('/src/assets/images/services/*.{jpeg,jpg,png,gif}');
+const collection = await getCollection('services');
+
+const services = await Promise.all(
+	collection.map(async (service) => {
+		const thumbnail = await media[service.data.thumbnail]();
+		return {
+			...service.data,
+			id: service.id,
+			thumbnail: thumbnail.default,
+		};
+	}),
+);
+---
+
+<section class="flex flex-col gap-5 border-t-[10px] border-[#9AFEFB] bg-white pb-12 pt-6">
+	<div class="ek-container flex flex-col gap-1 py-6 lg:gap-2">
+		<span class="font-medium text-neutral-500">Our services</span>
+		<h2 class="text-3xl font-semibold text-gray-800 xl:text-4xl">All Services</h2>
+	</div>
+	<div class="ek-container grid grid-cols-1 gap-10 px-6 md:grid-cols-2 lg:px-12 xl:grid-cols-4">
+		{
+			services.map((service) => (
+				<div class="flex w-full flex-col gap-5">
+					<Image
+						src={service.thumbnail}
+						widths={[240, 540, 720, 900, service.thumbnail.width]}
+						sizes={`(max-width: 360px) 240px, (max-width: 720px) 540px, (max-width: 900px) 720px, 900px, ${service.thumbnail.width}px`}
+						loading="lazy"
+						class="object-contain"
+						alt={service.title}
+					/>
+					<div class="flex w-full flex-col gap-3">
+						<h2 class="text-2xl font-medium">
+							<a class="hover:underline" href={`/service/${service.id}`}>
+								{service.title}
+							</a>
+						</h2>
+						<p class="xl:text-sm" set:html={service.meta.description} />
+					</div>
+				</div>
+			))
+		}
+	</div>
+</section>

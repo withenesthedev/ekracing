@@ -1,6 +1,8 @@
 {
 	"title": "Tailored Solutions for Engines",
-	"slug": "tailored-solutions-for-engines",
 	"thumbnail": "/src/assets/images/services/engine-build.jpg",
-	"description": "<p>We understand the distinctiveness of each engine, and our team specializes in crafting engine solutions.</p>"
+	"content": "<p>We specialize in creating custom-tuned engines that match each vehicle's unique needs. Understanding that every engine is different, we focus on making specific changes to improve its performance. Our team starts by examining the engine closely, figuring out which parts need upgrading or adjusting. This might mean tweaking how the engine mixes air and fuel for better power or even adding new parts like a better turbocharger for more speed.</p><p>Our approach is detailed and personalized. We consider the engine's design, what the car will be used for, and what the owner wants in terms of speed and power. Whether the car is for racing or just everyday driving, we aim to make the engine better than before. We use the latest tools to make sure our changes are precise and effective. Importantly, we don't just focus on making the engine stronger; we also make sure it stays reliable and lasts a long time. We choose high-quality parts and apply our deep knowledge to ensure the engine is both powerful and dependable after our work.</p><p class='font-medium'>In short, our tuned engine builds are about paying attention to the details to create a stronger, more efficient engine. We're proud to offer custom solutions that enhance the driving experience for our clients.</p>",
+	"meta": {
+		"description": "We understand the distinctiveness of each engine, and our team specializes in crafting engine solutions."
+	}
 }

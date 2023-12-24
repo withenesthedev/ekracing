@@ -5,6 +5,7 @@ import { SEO } from 'astro-seo';
 
 import '../assets/styles/tailwind.css';
 import '../assets/styles/theme.css';
+import MainLayoutFooter from './MainLayoutFooter.astro';
 
 export interface Props {
 	title: string;
@@ -24,6 +25,7 @@ const { title, description } = Astro.props;
 		<SEO
 			title={title}
 			description={description}
+			titleTemplate="%s - EK Racing"
 			extend={{
 				link: [{ rel: 'icon', href: '/favicon.ico' }],
 			}}
@@ -31,9 +33,12 @@ const { title, description } = Astro.props;
 
 		<slot name="after-meta" />
 	</head>
-	<body class="bg-[#010101]">
-		<MainLayoutHeader />
-		<slot />
+	<body class="flex min-h-screen flex-col justify-between">
+		<div class="bg-[#010101]">
+			<MainLayoutHeader />
+			<slot />
+		</div>
+		<MainLayoutFooter />
 		<slot name="after-body" />
 	</body>
 </html>
