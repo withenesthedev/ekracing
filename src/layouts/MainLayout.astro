@@ -37,6 +37,13 @@ const { title, description } = Astro.props;
 			extend={{
 				link: [{ rel: 'icon', href: '/favicon.ico' }],
 			}}
+			openGraph={{
+				basic: {
+					title: title + ' - EK Racing',
+					type: 'website',
+					image: 'https://2b7c-78-187-19-218.ngrok-free.app/apple-touch-icon.png',
+				},
+			}}
 		/>
 
 		<slot name="after-meta" />
