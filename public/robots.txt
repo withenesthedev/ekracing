@@ -1,2 +1,4 @@
 User-agent: *
 Allow: /
+
+Sitemap: https://ekracing.com.tr/sitemap-index.xml
