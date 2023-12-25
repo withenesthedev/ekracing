@@ -8,6 +8,6 @@ export default defineConfig({
   build: {
     assets: 'assets'
   },
-  site: 'https://ekracing.com.tr',
+  site: 'https://www.ekracing.com.tr',
   integrations: [tailwind(), sitemap()]
 });

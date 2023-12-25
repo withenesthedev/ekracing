@@ -34,7 +34,7 @@ const { title, description } = Astro.props;
 			title={title}
 			description={description}
 			titleTemplate="%s - EK Racing"
-			canonical={`https://ekracing.com.tr${Astro.url.pathname}`}
+			canonical={`https://www.ekracing.com.tr${Astro.url.pathname}`}
 			extend={{
 				link: [{ rel: 'icon', href: '/favicon.ico' }],
 			}}
@@ -42,8 +42,8 @@ const { title, description } = Astro.props;
 				basic: {
 					title: title + ' - EK Racing',
 					type: 'website',
-					image: 'https://ekracing.com.tr/apple-touch-icon.png',
-					url: `https://ekracing.com.tr${Astro.url.pathname}`,
+					image: 'https://www.ekracing.com.tr/apple-touch-icon.png',
+					url: `https://www.ekracing.com.tr${Astro.url.pathname}`,
 				},
 			}}
 		/>
