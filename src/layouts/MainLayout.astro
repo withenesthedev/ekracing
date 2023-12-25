@@ -34,9 +34,7 @@ const { title, description } = Astro.props;
 			title={title}
 			description={description}
 			titleTemplate="%s - EK Racing"
-			extend={{
-				link: [{ rel: 'icon', href: '/favicon.ico' }],
-			}}
+			canonical={`https://ekracing.com.tr${Astro.url.pathname}`}
 			openGraph={{
 				basic: {
 					title: title + ' - EK Racing',
