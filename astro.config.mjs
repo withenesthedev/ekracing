@@ -1,5 +1,4 @@
 import tailwind from '@astrojs/tailwind';
-import compress from 'astro-compress';
 
 import { defineConfig } from 'astro/config';
 
