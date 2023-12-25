@@ -1,0 +1,12 @@
+---
+import logo from '../assets/images/logo.png'
+
+export interface Props {
+	width: string
+	height: string
+}
+
+const { width, height } = Astro.props
+---
+
+<img src={logo.src} alt="Logo" width={width} height={height} />

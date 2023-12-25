@@ -1,0 +1,19 @@
+---
+import MainLayout from '../layouts/MainLayout.astro';
+
+import IndexHero from '../partials/IndexHero.astro';
+import IndexLocation from '../partials/IndexLocation.astro';
+import IndexServices from '../partials/IndexServices.astro';
+import IndexWorkPartners from '../partials/IndexWorkPartners.astro';
+---
+
+<MainLayout
+	title="Home"
+	description="Discover EK Racing, Premier tuning garage, specializing in custom performance enhancements, expert vehicle tuning, and state-of-the-art diagnostics. Elevate your ride's power, efficiency, and style with our passionate team of automotive experts. Visit us for unparalleled service and innovation in car tuning."
+>
+	<IndexHero />
+	<IndexServices />
+	<IndexWorkPartners />
+	<IndexLocation />
+	{/*<IndexProjects />*/}
+</MainLayout>
