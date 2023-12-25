@@ -8,5 +8,5 @@ export default defineConfig({
 	build: {
 		assets: 'assets',
 	},
-	integrations: [compress({ Logger: false }), tailwind()],
+	integrations: [tailwind()],
 });
