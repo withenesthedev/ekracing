@@ -1,7 +1,7 @@
 ---
 const locations = [
 	{
-		country: 'Turkey',
+		country: 'Türkiye',
 		flag: `
 			<svg
 				xmlns="http://www.w3.org/2000/svg"
@@ -19,7 +19,7 @@ const locations = [
 		address: ['Yaşamkent, 3122. Sk. No:18, 06000', 'Çankaya/Ankara'],
 		workingHours: ['Mon - Fri / 10 AM - 6 PM', 'Sat / 12 AM - 6 PM'],
 		phone: '+90 553 385 73 03',
-		maps: 'https://goo.gl/maps/6Z6Z1Z9Z9Z9Z9Z9Z9',
+		maps: 'https://maps.app.goo.gl/xpaCjezvTJ52XXKM9',
 	},
 	{
 		country: 'Kosovo',
@@ -72,10 +72,9 @@ const locations = [
 				</metadata>
 			</svg>
 		`,
-		address: ['Yaşamkent, 3122. Sk. No:18, 06000', 'Çankaya/Ankara'],
+		address: ['Genart tuning'],
 		workingHours: ['Mon - Fri / 10 AM - 6 PM', 'Sat / 12 AM - 6 PM'],
-		phone: '+90 553 385 73 03',
-		maps: 'https://goo.gl/maps/6Z6Z1Z9Z9Z9Z9Z9Z9',
+		phone: '+383 49 651 536',
 	},
 ];
 ---
@@ -115,21 +114,27 @@ const locations = [
 								<span class="text-lg font-medium">Phone</span>
 								<div>
 									<a
-										href={`tel:${location.phone}`}
+										href={`tel:${location.phone.replace(/\s/g, '')}`}
 										class="font-medium text-gray-600 hover:underline"
 									>
 										{location.phone}
 									</a>
 								</div>
 							</div>
-							<div class="flex w-full flex-col gap-1">
-								<span class="text-lg font-medium">Location</span>
-								<div>
-									<a href={location.maps} class="font-medium text-gray-600 hover:underline">
-										See at Google Maps
-									</a>
+							{location.maps && (
+								<div class="flex w-full flex-col gap-1">
+									<span class="text-lg font-medium">Location</span>
+									<div>
+										<a
+											href={location.maps}
+											target="_blank"
+											class="font-medium text-gray-600 hover:underline"
+										>
+											See at Google Maps
+										</a>
+									</div>
 								</div>
-							</div>
+							)}
 						</div>
 					</div>
 				))
